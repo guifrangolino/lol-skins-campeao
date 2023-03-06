@@ -134,7 +134,7 @@ main h1 {
     height: 50px;
     background: none;
     position: absolute;
-    top: -30px;
+    top: -35px;
     right: 0;
     cursor: pointer;
 }
@@ -175,7 +175,7 @@ main h1 {
     top: 0;
     left: 0;    
     backdrop-filter: blur(10px) saturate(70%);
-    mix-blend-mode: color-dodge;
+    mix-blend-mode: screen;
 }
 
 .swiper {
