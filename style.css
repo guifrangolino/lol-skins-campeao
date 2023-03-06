@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --swiper-theme-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    padding: 1rem;
+}
+
+main h1 {
+    color: #fff;
+}
+
+#input-search {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    width: 350px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: .1rem 1rem;
+}
+
+.aviso-carregando {
+    margin-top: 3rem;
+    width: fit-content;
+    color: #Fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aviso-carregando span {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.campeao-lista {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.campeao {
+    border: 1px solid #fff;
+    width: 250px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+    animation: entrada .3s ease 0s 1 normal forwards;
+}
+
+.campeao:hover {
+    transform: scale(1.02)
+}
+
+.campeao:hover .campeao-img-container img {
+    filter: none;
+}
+
+.campeao-img-container {
+    height: 200px;
+    background-image: url(img/mordekaiser-dance.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.campeao-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale();
+    transition: .3s;
+}
+
+.campeao-nome {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.campeao-skins-fundo {
+    background-color: rgba(0, 0, 0, 0.637);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: entrada .3s ease 0s 1 normal forwards;
+}
+
+.campeao-skins {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.btn-fechar {
+    border: 0;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    background: none;
+    position: absolute;
+    top: -30px;
+    right: 0;
+    cursor: pointer;
+}
+
+.btn-fechar::after, .btn-fechar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+}
+
+.btn-fechar::after {
+    transform: rotate(45deg);
+}
+
+.btn-fechar::before {
+    transform: rotate(-45deg);
+}
+
+.btn-fechar:hover::after, .btn-fechar:hover::before {
+    background: rgb(180, 180, 180);
+}
+
+.skin-nome {
+    align-self: flex-start;
+    font-size: 1rem;
+    color: white;
+    padding-left: 1rem;
+}
+
+.slider-skin-nome {
+    font-size: 2rem;
+    color: white;
+    padding: 0 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;    
+    backdrop-filter: blur(10px) saturate(70%);
+    mix-blend-mode: color-dodge;
+}
+
+.swiper {
+    border: 1px solid #fff;
+    width: 1000px;
+    height: 500px;
+}
+
+.swiper-slide {
+    background-color: gray;
+    background-image: url(img/mordekaiser-dance.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.swiper-slide::after {
+    content: 'Carregando...';
+    color: #fff;
+    position: absolute;
+    bottom: 70px;
+    font-size: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.slider-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@keyframes entrada {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
