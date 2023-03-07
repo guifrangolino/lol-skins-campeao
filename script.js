@@ -7,7 +7,7 @@ const swiperImagens = document.querySelector('.swiper-wrapper')
 const nomeSkin = document.querySelector('.skin-nome')
 
 async function fetchChampions() {
-    const response = await fetch('http://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json').then(resp => resp.json())
+    const response = await fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json').then(resp => resp.json())
     const champions = await response.data
     return champions
 }
@@ -38,7 +38,7 @@ fetchChampions().then((championList) => {
 })
 
 async function fetchChampionSkin(champId) {
-    const response = await fetch(`http://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion/${champId}.json`).then(resp => resp.json())
+    const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion/${champId}.json`).then(resp => resp.json())
     
     const arrayData = await response.data[champId]
     swiperImagens.innerHTML = ''
@@ -55,7 +55,7 @@ function adicionarSkin(id, num, skinNome, champNome) {
     const img = document.createElement('img')
     const span = document.createElement('span')
     skinNome == 'default' ? span.innerHTML = champNome + ' Default' : span.innerHTML = skinNome
-    img.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${num}.jpg`
+    img.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${num}.jpg`
     div.classList.add('swiper-slide')
     img.classList.add('slider-img')
     span.classList.add('slider-skin-nome')
