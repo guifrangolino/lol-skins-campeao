@@ -1,5 +1,3 @@
-// lembrar de colocar a key no id
-// função para pegar todos os campeaos e os ids
 const campeaoContainer = document.querySelector('.campeao-lista')
 const avisoCarregando = document.querySelector('.aviso-carregando')
 const input = document.querySelector('#input-search')
@@ -41,7 +39,7 @@ fetchChampions().then((championList) => {
 
 async function fetchChampionSkin(champId) {
     const response = await fetch(`http://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion/${champId}.json`).then(resp => resp.json())
-    // TALVEZ MERDA
+    
     const arrayData = await response.data[champId]
     swiperImagens.innerHTML = ''
     arrayData.skins.forEach(skinObj => {
@@ -97,5 +95,10 @@ const swiper = new Swiper('.swiper', {
     // And if we need scrollbar
     scrollbar: {
         el: '.swiper-scrollbar',
+    },
+
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
     },
 });

@@ -189,6 +189,8 @@ main h1 {
     background-image: url(img/mordekaiser-dance.gif);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 25%;
+    height: auto;
 }
 
 .swiper-slide::after {
@@ -205,6 +207,87 @@ main h1 {
 .slider-img {
     width: 100%;
     object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+    .swiper {
+        width: 95vw;
+        height: auto;
+    }
+
+    .slider-img {
+        height: 100%;
+    }
+
+    .campeao-img-container img {
+        filter: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    main h1 {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .campeao {
+        width: 180px;
+        max-width: 180px;
+    }
+
+    .campeao-nome {
+        font-size: 1rem;
+    }
+
+    .campeao-img-container {
+        height: 130px;
+    }
+
+    .slider-skin-nome {
+        font-size: 1.5rem;
+    }
+
+    .btn-fechar {
+        width: 30px;
+        height: 30px;
+        top: -15px;
+    }
+    
+}
+
+@media (max-width: 427px) {
+
+    #input-search {
+        width: 90%;
+    }
+
+    .aviso-carregando {
+        margin-top: 2rem;
+    }
+
+    .aviso-carregando img {
+        width: 80%;
+    }
+    
+    .aviso-carregando span {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .campeao {
+        width: 130px;
+        max-width: 130px;
+    }
+
+    .campeao-img-container {
+        height: 80px;
+    }
+
+    .slider-skin-nome {
+        font-size: 1.2rem;
+    }
 }
 
 @keyframes entrada {
